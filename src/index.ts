@@ -1,1 +1,1 @@
-export * from "./generator/generator.js";
+export { generateEnv } from "./generator/generator.js";

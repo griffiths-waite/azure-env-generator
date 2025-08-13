@@ -3,6 +3,14 @@ import { AzureConfig, FetchOptions } from "../types.js";
 export const formatUrl = (baseUrl: string, url: string, options: FetchOptions): string => {
     const { query, params } = options;
 
+    if (!baseUrl.endsWith("/")) {
+        baseUrl += "/";
+    }
+
+    if (url.startsWith("/")) {
+        url = url.slice(1);
+    }
+
     const fullUrl = new URL(url, baseUrl);
 
     Object.entries(query ?? {}).forEach(([key, value]) => {

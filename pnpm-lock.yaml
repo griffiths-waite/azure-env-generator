@@ -15,7 +15,7 @@ importers:
         specifier: ^24.2.1
         version: 24.2.1
       '@vitest/coverage-istanbul':
-        specifier: 3.0.5
+        specifier: ^3.0.5
         version: 3.0.5(vitest@3.2.4(@types/node@24.2.1))
       dotenv:
         specifier: ^17.2.1
