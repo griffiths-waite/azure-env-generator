@@ -1,4 +1,4 @@
-// This file is for testing the package locally. Do no push changes to this file to the repository.
+#!/usr/bin/env node
 
 import "dotenv/config";
 import { generateEnv } from "../generator/generator.js";
@@ -35,5 +35,6 @@ import { generateEnv } from "../generator/generator.js";
         },
         filename: ".env.generated",
     });
+
     process.exit(0);
 })();
