@@ -1,8 +1,8 @@
-import { fetch, RequestInit } from "undici";
-import { config } from "./config.js";
-import { Params, Query } from "./types.js";
+import { AzureConfig, FetchOptions } from "../types.js";
 
-export const formatUrl = (baseUrl: string, url: string, query?: Query, params?: Params): string => {
+export const formatUrl = (baseUrl: string, url: string, options: FetchOptions): string => {
+    const { query, params } = options;
+
     const fullUrl = new URL(url, baseUrl);
 
     Object.entries(query ?? {}).forEach(([key, value]) => {
@@ -22,13 +22,10 @@ export const formatUrl = (baseUrl: string, url: string, query?: Query, params?: 
     return fullUrl.toString();
 };
 
-export const baseFetch = async <ResponseType>(
-    url: string,
-    options: RequestInit & { query?: Query; params?: Params },
-) => {
+export const baseFetch = async <ResponseType>(config: AzureConfig, url: string, options: FetchOptions) => {
     const baseUrl = `https://dev.azure.com/${config.organisation}/${config.project}/_apis/`;
 
-    const fullUrl = formatUrl(baseUrl, url, options.query, options.params);
+    const fullUrl = formatUrl(baseUrl, url, options);
 
     const response = await fetch(fullUrl, {
         ...options,

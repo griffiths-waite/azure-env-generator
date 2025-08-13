@@ -1,13 +1,13 @@
 import fs from "fs";
 
-export const getExistingEnvVariables = () => {
-    const envExists = fs.existsSync(".env");
+export const getExistingEnvVariables = (filename: string) => {
+    const envExists = fs.existsSync(filename);
 
     if (!envExists) {
         return [];
     }
 
-    const env = fs.readFileSync(".env", "utf8");
+    const env = fs.readFileSync(filename, "utf8");
 
     return env.split("\n");
 };

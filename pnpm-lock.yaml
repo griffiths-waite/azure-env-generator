@@ -7,13 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      dotenv:
-        specifier: ^17.2.1
-        version: 17.2.1
-      undici:
-        specifier: ^7.13.0
-        version: 7.13.0
     devDependencies:
       '@changesets/cli':
         specifier: ^2.27.12
@@ -24,6 +17,9 @@ importers:
       '@vitest/coverage-istanbul':
         specifier: 3.0.5
         version: 3.0.5(vitest@3.2.4(@types/node@24.2.1))
+      dotenv:
+        specifier: ^17.2.1
+        version: 17.2.1
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -1265,10 +1261,6 @@ packages:
 
   undici-types@7.10.0:
     resolution: {integrity: sha1-SsLgWM5WtGKwVuYpzGoCOT0/81A=}
-
-  undici@7.13.0:
-    resolution: {integrity: sha1-kzH5n8QpcNy99UGZ5mBHVbpUQzo=}
-    engines: {node: '>=20.18.1'}
 
   universalify@0.1.2:
     resolution: {integrity: sha1-tkb2m+OULavOzJ1mOcgNwQXvqmY=}
@@ -2577,8 +2569,6 @@ snapshots:
   ufo@1.6.1: {}
 
   undici-types@7.10.0: {}
-
-  undici@7.13.0: {}
 
   universalify@0.1.2: {}
 
