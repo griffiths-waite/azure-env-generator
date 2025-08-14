@@ -16,10 +16,10 @@ import { loadOverrides } from "./overrides.js";
         printArguments();
     }
 
-    const token = process.env.ENV_GEN_AZURE_TOKEN;
+    const token = process.env.AZURE_ENV_GENERATOR_TOKEN;
 
     if (!token) {
-        console.error("Missing required environment variable: ENV_GEN_AZURE_TOKEN");
+        console.error("Missing required environment variable: AZURE_ENV_GENERATOR_TOKEN");
         process.exit(1);
     }
 
