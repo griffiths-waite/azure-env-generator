@@ -36,7 +36,7 @@ azure-env-generator --organisation my_org --project my_project --group my_variab
 
 Overrides and additional variables can be specified using the `--overrides` option.
 
-Example **JSON** file for specifying overrides:
+Example file for specifying overrides, in JSON format:
 
 ```json
 {
