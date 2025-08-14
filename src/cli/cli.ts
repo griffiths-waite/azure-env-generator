@@ -1,3 +1,4 @@
+import "dotenv/config.js";
 import { generateEnv } from "../generator/generator.js";
 import { cliArguments, getArgument, printArguments } from "./arguments.js";
 import { loadOverrides } from "./overrides.js";
