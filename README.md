@@ -14,11 +14,9 @@ You can run the generator either via the CLI or programatically.
 
 ### CLI Usage
 
-Before using the CLI command, you must set the environment variable `AZURE_ENV_GENERATOR_TOKEN` with an Azure **Personal Access Token (PAT)**.
+Before using the CLI command, you must set the environment variable `AZURE_ENV_GENERATOR_TOKEN` with an Azure **Personal Access Token (PAT)**. This token must have the **Variable Groups (read)** permission.
 
-This token must have the **Variable Groups (read)** permission.
-
-Read the [Azure documentation](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate) for more information on how to create a PAT.
+> Read the [Azure documentation](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate) for more information on how to create a PAT.
 
 The easiest way to set this variable is to create a `.env` file in the root of your project:
 
