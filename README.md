@@ -12,7 +12,7 @@ npm install azure-env-generator
 
 You can run the generator either via the CLI or programatically.
 
-### CLI
+### CLI Usage
 
 Before using the CLI command, you must set the environment variable `AZURE_ENV_GENERATOR_TOKEN` with an Azure Personal Access Token (PAT).
 
@@ -57,7 +57,7 @@ The full list of options are available via the `--help` flag:
 azure-env-generator --help
 ```
 
-### Programmatic
+### Programmatic Usage
 
 To use the generator programmatically, you can import it and call the `generateEnv` function:
 
@@ -89,6 +89,6 @@ You can configure the generator with the following options:
 - `filename`: The filename to write the generated environment variables to (default is `.env`).
 - `overrides`: An object containing variable overrides or additional variables. If a variable is set to `null`, it will be fetched from the existing `.env` file if it exists.
 
-### Contributing
+## Contributing
 
 Contributions are welcome! Please open an issue or a pull request on GitHub.
