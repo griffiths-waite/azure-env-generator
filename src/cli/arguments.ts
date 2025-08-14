@@ -28,7 +28,7 @@ export const cliArguments = {
     filename: {
         longName: "--filename",
         shortName: "-f",
-        description: "The filename to write the generated environment variables to.",
+        description: "The filename to write the generated environment variables to. (default is .env)",
         required: false,
     },
     overrides: {
