@@ -1,6 +1,6 @@
 # azure-env-generator
 
-Generate .env files from Azure Variable Groups.
+Developer tool for generating .env files from Azure Variable Groups.
 
 ## Installation
 

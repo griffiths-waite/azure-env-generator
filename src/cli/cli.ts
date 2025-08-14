@@ -2,6 +2,8 @@ import { generateEnv } from "../generator/generator.js";
 import { cliArguments, getArgument, printArguments } from "./arguments.js";
 import { loadOverrides } from "./overrides.js";
 
+export const cliTokenKey = "AZURE_ENV_GENERATOR_TOKEN" as const;
+
 export const cli = async () => {
     const args = process.argv.slice(2);
 
@@ -13,10 +15,10 @@ export const cli = async () => {
         return printArguments();
     }
 
-    const token = process.env.AZURE_ENV_GENERATOR_TOKEN;
+    const token = process.env[cliTokenKey];
 
     if (!token) {
-        throw new Error("Missing required environment variable: AZURE_ENV_GENERATOR_TOKEN");
+        throw new Error(`Missing required environment variable: ${cliTokenKey}`);
     }
 
     const organisation = getArgument(args, "organisation");
