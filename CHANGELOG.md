@@ -1,5 +1,11 @@
 # azure-env-generator
 
+## 0.1.2
+
+### Patch Changes
+
+- ade940a: Moved Node.js built-in modules to external dependencies in tsup config to prevent ESM issues
+
 ## 0.1.1
 
 ### Patch Changes
