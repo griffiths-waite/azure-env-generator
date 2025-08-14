@@ -49,7 +49,7 @@ Then run the following command with a reference to the overrides file:
 azure-env-generator --overrides overrides.json -o my_org -p my_project -g my_variable_group
 ```
 
-The full list of options are available via the `--help` flag:
+The full list of options are available via the `--help` option:
 
 ```bash
 azure-env-generator --help
