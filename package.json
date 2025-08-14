@@ -1,6 +1,6 @@
 {
     "name": "azure-env-generator",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Generate .env files from Azure Variable Groups.",
     "author": "Griffiths Waite",
     "license": "MIT",
