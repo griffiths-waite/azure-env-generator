@@ -48,7 +48,7 @@ Example overrides file `overrides.json`:
 Then run the following command with a reference to the overrides file:
 
 ```bash
-azure-env-generator --overrides overrides.json --organisation my_org --project my_project --group my_variable_group
+azure-env-generator --overrides overrides.json -o my_org -p my_project -g my_variable_group
 ```
 
 The full list of options are available via the `--help` flag:
