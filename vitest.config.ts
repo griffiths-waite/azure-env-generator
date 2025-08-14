@@ -9,7 +9,6 @@ export default defineConfig({
             provider: "istanbul",
             reporter: ["lcov", "html", "text"],
             reportsDirectory: "../coverage",
-            exclude: ["**/dev.ts"],
         },
     },
 });
