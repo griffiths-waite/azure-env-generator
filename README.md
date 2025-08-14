@@ -14,9 +14,9 @@ You can run the generator either via the CLI or programatically.
 
 ### CLI Usage
 
-Before using the CLI command, you must set the environment variable `AZURE_ENV_GENERATOR_TOKEN` with an Azure Personal Access Token (PAT).
+Before using the CLI command, you must set the environment variable `AZURE_ENV_GENERATOR_TOKEN` with an Azure **Personal Access Token** (PAT).
 
-This token must have the `Variable Groups (read)` permission.
+This token must have the **Variable Groups (read)** permission.
 
 See this link for more information on how to create a PAT: [Create a Personal Access Token](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
 
@@ -32,11 +32,11 @@ Then to use the generator via the CLI, you can run the following command:
 azure-env-generator --organisation my_org --project my_project --group my_variable_group
 ```
 
-Variables marked as secrets will be left empty in the generated file. You can set them manually in the `.env` file and they will be persisted in future runs.
+> Note: Variables marked as secrets will be left empty in the generated file. You can set them manually in the `.env` file and they will be persisted in future runs.
 
 Overrides and additional variables can be specified using the `--overrides` option.
 
-Example overrides file `overrides.json`:
+Example JSON file for specifying overrides:
 
 ```json
 {
