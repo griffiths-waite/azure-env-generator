@@ -1,5 +1,11 @@
 # azure-env-generator
 
+## 0.1.4
+
+### Patch Changes
+
+- 02cbabd: Updates to README documentation
+
 ## 0.1.3
 
 ### Patch Changes
