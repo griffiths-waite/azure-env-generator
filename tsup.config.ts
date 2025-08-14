@@ -6,5 +6,6 @@ export default defineConfig({
     sourcemap: true,
     outDir: "dist",
     format: ["esm", "cjs"],
+    external: ["fs", "url"],
     entry: ["./src/index.ts", "./src/cli/bin.ts"],
 });
