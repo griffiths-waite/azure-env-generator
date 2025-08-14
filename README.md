@@ -1,6 +1,6 @@
 # azure-env-generator
 
-Developer tool for generating .env files from Azure Variable Groups.
+Developer tool for generating `.env` files from Azure Variable Groups.
 
 ## Installation
 
@@ -10,7 +10,52 @@ npm install azure-env-generator
 
 ## Usage
 
-You can use the generator either programmatically or via the CLI.
+You can run the generator either via the CLI or programatically.
+
+### CLI
+
+Before using the CLI command, you must set the environment variable `AZURE_ENV_GENERATOR_TOKEN` with an Azure Personal Access Token (PAT).
+
+This token must have the `Variable Groups (read)` permission.
+
+See this link for more information on how to create a PAT: [Create a Personal Access Token](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
+
+The easiest way to set this variable is to create a `.env` file in the root of your project:
+
+```bash
+AZURE_ENV_GENERATOR_TOKEN=personal_access_token
+```
+
+Then to use the generator via the CLI, you can run the following command:
+
+```bash
+azure-env-generator --organisation my_org --project my_project --group my_variable_group
+```
+
+Variables marked as secrets will be left empty in the generated file. You can set them manually in the `.env` file and they will be persisted in future runs.
+
+Overrides and additional variables can be specified using the `--overrides` option.
+
+Example overrides file `overrides.json`:
+
+```json
+{
+    "VARIABLE_NAME": "override_value",
+    "ANOTHER_VARIABLE": "another_value"
+}
+```
+
+Then run the following command with a reference to the overrides file:
+
+```bash
+azure-env-generator --overrides overrides.json -o my_org -p my_project -g my_variable_group
+```
+
+The full list of options are available via the `--help` flag:
+
+```bash
+azure-env-generator --help
+```
 
 ### Programmatic
 
@@ -33,40 +78,6 @@ await generateEnv({
 });
 ```
 
-This will generate a `.env` file like this example:
-
-```bash
-VARIABLE_NAME=override_value
-VARIABLE_FROM_GROUP=value_from_group
-SECRET_VARIABLE=
-```
-
-Note that any secret variables will be left empty in the generated file. You can set them manually in the .env file and they will be persisted in future runs.
-
-### CLI
-
-Before using the CLI command, you must set the environment variable `AZURE_ENV_GENERATOR_TOKEN` with an Azure Personal Access Token (PAT).
-
-This token must have the `Variable Groups (read)` permission.
-
-The easiest way to set this variable is to create a `.env` file in the root of your project:
-
-```bash
-AZURE_ENV_GENERATOR_TOKEN=personal_access_token
-```
-
-Then to use the generator via the CLI, you can run the following command:
-
-```bash
-npm azure-env-generator --organisation my_org --project my_project --group my_variable_group
-```
-
-The full list of options are available via the `--help` flag:
-
-```bash
-npm azure-env-generator --help
-```
-
 ### Configuration Options
 
 You can configure the generator with the following options:
@@ -76,7 +87,7 @@ You can configure the generator with the following options:
 - `azure.project`: The project that contains the variable group.
 - `azure.groupName`: The name of the variable group to fetch.
 - `filename`: The filename to write the generated environment variables to (default is `.env`).
-- `overrides`: An object containing variable overrides or additional variables. If a variable is set to `null`, it will be fetched from the existing env file if it exists.
+- `overrides`: An object containing variable overrides or additional variables. If a variable is set to `null`, it will be fetched from the existing `.env` file if it exists.
 
 ### Contributing
 
