@@ -1,5 +1,6 @@
 import fs from "fs";
 import { baseFetch } from "../azure/client.js";
+import { cliTokenKey } from "../cli/cli.js";
 import { EnvGeneratorConfig, VariableGroups } from "../types.js";
 import { getExistingEnvValue, getExistingEnvVariables } from "./utils.js";
 
@@ -62,6 +63,13 @@ export const generateEnv = async (config: EnvGeneratorConfig) => {
             env.push(`${key}=${variable}`);
         }
     });
+
+    // Add CLI token variable if needed
+    const cliToken = getExistingEnvValue(existingVariables, cliTokenKey);
+
+    if (cliToken && !env.some((line) => line.startsWith(cliTokenKey + "="))) {
+        env.push(`${cliTokenKey}=${cliToken}`);
+    }
 
     env.sort((a, b) => {
         const aValue = a.split("=")[1];
