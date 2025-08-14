@@ -1,6 +1,6 @@
 # azure-env-generator
 
-Developer tool for generating .env files from Azure Variable Groups.
+Developer tool for generating `.env` files from Azure Variable Groups.
 
 ## Installation
 
@@ -32,7 +32,7 @@ Then to use the generator via the CLI, you can run the following command:
 azure-env-generator --organisation my_org --project my_project --group my_variable_group
 ```
 
-Variables marked as secrets will be left empty in the generated file. You can set them manually in the .env file and they will be persisted in future runs.
+Variables marked as secrets will be left empty in the generated file. You can set them manually in the `.env` file and they will be persisted in future runs.
 
 Overrides and additional variables can be specified using the `--overrides` option.
 
@@ -48,7 +48,7 @@ Example overrides file `overrides.json`:
 Then run the following command with a reference to the overrides file:
 
 ```bash
-azure-env-generator --organisation my_org --project my_project --group my_variable_group --overrides overrides.json
+azure-env-generator --overrides overrides.json --organisation my_org --project my_project --group my_variable_group
 ```
 
 The full list of options are available via the `--help` flag:
