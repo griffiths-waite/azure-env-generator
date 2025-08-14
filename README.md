@@ -18,7 +18,7 @@ Before using the CLI command, you must set the environment variable `AZURE_ENV_G
 
 This token must have the **Variable Groups (read)** permission.
 
-See this link for more information on how to create a PAT: [Create a Personal Access Token](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
+Read the [Azure documentation](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate) for more information on how to create a PAT.
 
 The easiest way to set this variable is to create a `.env` file in the root of your project:
 
