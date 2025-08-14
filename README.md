@@ -14,7 +14,7 @@ You can run the generator either via the CLI or programatically.
 
 ### CLI Usage
 
-Before using the CLI command, you must set the environment variable `AZURE_ENV_GENERATOR_TOKEN` with an Azure **Personal Access Token** (PAT).
+Before using the CLI command, you must set the environment variable `AZURE_ENV_GENERATOR_TOKEN` with an Azure **Personal Access Token (PAT)**.
 
 This token must have the **Variable Groups (read)** permission.
 
@@ -36,7 +36,7 @@ azure-env-generator --organisation my_org --project my_project --group my_variab
 
 Overrides and additional variables can be specified using the `--overrides` option.
 
-Example JSON file for specifying overrides:
+Example **JSON** file for specifying overrides:
 
 ```json
 {
