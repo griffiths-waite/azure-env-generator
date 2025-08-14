@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      dotenv:
+        specifier: ^17.2.1
+        version: 17.2.1
     devDependencies:
       '@changesets/cli':
         specifier: ^2.27.12
@@ -17,9 +21,6 @@ importers:
       '@vitest/coverage-istanbul':
         specifier: ^3.0.5
         version: 3.0.5(vitest@3.2.4(@types/node@24.2.1))
-      dotenv:
-        specifier: ^17.2.1
-        version: 17.2.1
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
