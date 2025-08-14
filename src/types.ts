@@ -65,6 +65,13 @@ export interface VariableGroups {
     }[];
 }
 
+export interface CliArgument {
+    longName: string;
+    shortName: string;
+    description: string;
+    required: boolean;
+}
+
 type Query = Record<string, string | string[] | number | number[] | undefined | undefined[]>;
 
 type Params = Record<string, string | number | boolean | undefined>;
