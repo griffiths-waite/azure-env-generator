@@ -15,8 +15,6 @@ export const loadOverrides = async (filePath?: string) => {
 
         return overrides.default;
     } catch (err) {
-        console.error(`Failed to load overrides from ${filePath}`);
-
-        process.exit(1);
+        throw new Error(`Failed to load overrides from ${filePath}`);
     }
 };
