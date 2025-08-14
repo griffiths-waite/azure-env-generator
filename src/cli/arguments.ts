@@ -73,6 +73,4 @@ export const printArguments = () => {
     Object.entries(cliArguments).forEach(([_, arg]) => {
         console.log(`  ${arg.shortName}, ${arg.longName}  ${arg.description}${arg.required ? " (required)" : ""}`);
     });
-
-    process.exit(0);
 };

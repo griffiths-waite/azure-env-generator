@@ -7,10 +7,10 @@ export const cli = async () => {
 
     const { longName, shortName } = cliArguments.help;
 
-    const help = args.includes(longName) ?? args.includes(shortName);
+    const help = args.includes(longName) || args.includes(shortName);
 
     if (help) {
-        printArguments();
+        return printArguments();
     }
 
     const token = process.env.AZURE_ENV_GENERATOR_TOKEN;
@@ -38,7 +38,7 @@ export const cli = async () => {
 
     const overrides = await loadOverrides(overridesPath);
 
-    await generateEnv({
+    return await generateEnv({
         azure: {
             token,
             organisation,
