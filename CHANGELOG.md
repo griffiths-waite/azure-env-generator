@@ -1,5 +1,11 @@
 # azure-env-generator
 
+## 0.1.5
+
+### Patch Changes
+
+- 91f5c7e: Disabled warning message for importing JSON module
+
 ## 0.1.4
 
 ### Patch Changes
